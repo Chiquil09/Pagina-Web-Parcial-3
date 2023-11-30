@@ -7,22 +7,48 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AlumnoService {
 
   private url = 'https://instituto-56503-default-rtdb.firebaseio.com';
 
-
   constructor(private http: HttpClient) { }
 
-  crearAlumno( alumno: AlumnoModel ){
+  crearAlumno(alumno: AlumnoModel) {
 
-    return this.http.post(`${ this.url }/alumno.json`, alumno)
-    .pipe(
-      map( (resp: any) => {
-        alumno.id = resp.name;
-        return alumno;
-      })
-    );
-
+    return this.http.post(`${this.url}/alumno.json`, alumno)
+      .pipe(
+        map((resp: any) => {
+          alumno.id = resp.name;
+          return alumno;
+        })
+      );
   }
+
+  getAlumnos(){
+    return this.http.get(`${ this.url }/alumno.json`)
+    .pipe(
+      map( resp => this.crearArreglo(resp))
+    );
+  }
+
+
+private crearArreglo( alumnoObj: { [key: string]: AlumnoModel } | any): AlumnoModel[]{
+
+  const alumnos: AlumnoModel[] = [];
+  console.log(alumnoObj);
+
+  Object.keys (alumnoObj).forEach( key =>{
+    const alumno: AlumnoModel = alumnoObj[key];
+    alumno.id = key;
+
+    alumnos.push(alumno);
+
+  });
+
+  if (alumnoObj === null ){ return []; }
+
+  return alumnos;
+}
+
 }
