@@ -1,6 +1,6 @@
   <div class="card w-75 mb-3 mx-auto mt-5">
     <div class="card-header">
-      <a class="btn btn-primary" routerLink="/formulario" role="button">Registrar nuevo alumno</a>
+      <a class="btn btn-primary" routerLink="/formulario/nuevo" role="button">Registrar nuevo alumno</a>
     </div>
     <div class="card-body">
       <table class="table mt-3 table-striped">
@@ -33,7 +33,9 @@
               <button type="button"
               class="btn btn-success mr-3"
               [routerLink]="['/formulario', alumno.id]">Actualizar</button>
-              <button type="button" class="btn btn-danger">Eliminar</button>
+              <button type="button"
+              class="btn btn-danger"
+              (click)="borrarAlumno( alumno, i)">Eliminar</button>
             </td>
           </tr>
         </tbody>

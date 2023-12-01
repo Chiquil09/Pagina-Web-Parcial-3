@@ -1,13 +1,13 @@
 export class AlumnoModel{
 
-  id:string = "";
-  imagen:string = "";
-  nombre:string = "";
-  apellido:string = "";
-  correo:string = "";
-  grupo:string = "";
-  carrera:string = "";
-  sexo:string = "";
+  id:string;
+  imagen:string;
+  nombre:string;
+  apellido:string;
+  correo:string;
+  grupo:string;
+  carrera:string;
+  sexo:string;
   aprobado_reprobado:boolean;
 
   constructor(){

@@ -7,6 +7,7 @@ import { FormularioComponent } from './pages/formulario/formulario.component';
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'tabla', component: TablaComponent},
+  { path: 'formulario/:id', component: FormularioComponent },
   {path: 'formulario', component: FormularioComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'inicio'}
 ];
