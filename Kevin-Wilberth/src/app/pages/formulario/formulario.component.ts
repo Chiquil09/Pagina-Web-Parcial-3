@@ -5,7 +5,7 @@ import { AlumnoService } from '../../services/alumno.service';
 
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -17,7 +17,8 @@ export class FormularioComponent {
   alumno = new AlumnoModel();
 
   constructor(private alumnoService: AlumnoService,
-    private route: ActivatedRoute ) { }
+    private route: ActivatedRoute,
+    private router: Router ) { }
 
 
     ngOnInit() {
@@ -35,39 +36,47 @@ export class FormularioComponent {
 
     }
 
-guardar( form: NgForm ) {
+    guardar(form: NgForm) {
 
-  if( form.invalid ) {
-    console.log('Formulario no válido');
+      if (form.invalid) {
+        console.log('Formulario no válido');
+        return;
+      }
 
-     return;
-    }
-
-    Swal.fire({
-      title: 'Espere',
-      text: 'Guardando información',
-      icon: 'info',
-      allowOutsideClick: false
-    });
-
-    Swal.showLoading();
-
-    let peticion: Observable<any>;
-
-    if( this.alumno.id ) {
-     peticion = this.alumnoService.actualizarHeroe( this.alumno );
-    }else {
-     peticion = this.alumnoService.crearAlumno( this.alumno );
-    }
-
-    peticion.subscribe( resp => {
       Swal.fire({
-        title: this.alumno.nombre,
-        text: 'Se actualizó correctamente',
-        icon: 'success'
+        title: 'Espere',
+        text: 'Guardando información',
+        icon: 'info',
+        allowOutsideClick: false
       });
-    })
 
-}
+      Swal.showLoading();
 
+      let peticion: Observable<any>;
+
+      if (this.alumno.id) {
+        peticion = this.alumnoService.actualizarHeroe(this.alumno);
+        Swal.fire({
+            title: this.alumno.nombre,
+            text: 'Se actualizó correctamente',
+            icon: 'success'
+          }).then(() => {
+            // Redirigir a la página deseada
+            this.router.navigate(['/tabla']);
+          });
+
+      } else {
+        peticion = this.alumnoService.crearAlumno(this.alumno);
+        Swal.fire({
+            title: this.alumno.nombre,
+            text: 'Se creó correctamente',
+            icon: 'success'
+          }).then(() => {
+            // Redirigir a la página deseada
+            this.router.navigate(['/tabla']);
+          });
+      }
+
+      peticion.subscribe(resp => {});
+    }
 }
