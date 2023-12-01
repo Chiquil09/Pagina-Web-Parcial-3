@@ -25,7 +25,7 @@ export class AlumnoService {
       );
   }
 
-  actualizarHeroe( alumno: AlumnoModel ) {
+  actualizarAlumno( alumno: AlumnoModel ) {
 
     const alumnoTemp = {
      ...alumno

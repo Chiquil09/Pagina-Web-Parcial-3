@@ -55,7 +55,7 @@ export class FormularioComponent {
       let peticion: Observable<any>;
 
       if (this.alumno.id) {
-        peticion = this.alumnoService.actualizarHeroe(this.alumno);
+        peticion = this.alumnoService.actualizarAlumno(this.alumno);
         Swal.fire({
             title: this.alumno.nombre,
             text: 'Se actualizó correctamente',
