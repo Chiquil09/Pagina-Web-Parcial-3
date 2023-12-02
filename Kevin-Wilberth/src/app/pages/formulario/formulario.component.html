@@ -1,0 +1,110 @@
+<form (ngSubmit)="guardar( f )" #f="ngForm">
+  <div class="card w-75 mb-3 mx-auto mt-5">
+    <div class="card-header">
+      Datos del alumno
+    </div>
+    <div class="card-body">
+  <!--   <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Id</label>
+        <input type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Example input placeholder"
+        [(ngModel)]="alumno.id"
+        name="id">
+      </div> -->
+      <div class="mb-3">
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">Imagen</label>
+          <input class="form-control"
+          type="file"
+          id="formFileMultiple"
+          multiple
+          [(ngModel)]="alumno.imagen"
+          name="imagen">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Nombre</label>
+        <input type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Nombre"
+        [(ngModel)]="alumno.nombre"
+        name="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput3" class="form-label">Apellido</label>
+        <input type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="Apellido"
+        [(ngModel)]="alumno.apellido"
+        name="apellido">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput4" class="form-label">Correo</label>
+        <input type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="Correo"
+        [(ngModel)]="alumno.correo"
+        name="correo">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput5" class="form-label">Sexo</label>
+        <select class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="alumno.sexo"
+        name="sexo">
+          <option selected></option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput7" class="form-label">Carrera</label>
+        <select class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="alumno.carrera"
+        name="carrera">
+          <option selected></option>
+          <option value="Progrmacion">Progrmacion</option>
+          <option value="Contabilidad">Contabilidad</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput6" class="form-label">Grupo</label>
+        <select class="form-select"
+        aria-label="Default select example"
+        [(ngModel)]="alumno.grupo"
+        name="grupo">
+          <option selected></option>
+          <option value="PMT">PMT</option>
+          <option value="CMT">CMT</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput8" class="form-label">Materia 1</label>
+        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Materia 1" id="cal1">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput9" class="form-label">Materia 2</label>
+        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Materia 2" id="cal2">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput10" class="form-label">Materia 3</label>
+        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Materia 3" id="cal3">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput11" class="form-label">Promedio</label>
+        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Promedio" id="promedio" disabled>
+        <input type="button" value="Calcular Promedio" class="btn btn-primary" id="calPromedio" name="calPromedio">
+      </div>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+      </div>
+    </div>
+  </div>
+  </form>
+
