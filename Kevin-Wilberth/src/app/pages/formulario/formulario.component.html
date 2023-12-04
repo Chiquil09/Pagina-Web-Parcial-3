@@ -4,7 +4,7 @@
       Datos del alumno
     </div>
     <div class="card-body">
-  <!--   <div class="mb-3">
+      <!--   <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Id</label>
         <input type="text"
         class="form-control"
@@ -16,47 +16,28 @@
       <div class="mb-3">
         <div class="mb-3">
           <label for="formFileMultiple" class="form-label">Imagen</label>
-          <input class="form-control"
-          type="file"
-          id="formFileMultiple"
-          multiple
-          [(ngModel)]="alumno.imagen"
-          name="imagen">
+          <input class="form-control" type="file" id="formFileMultiple" multiple [(ngModel)]="alumno.imagen"
+            name="imagen">
         </div>
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput2" class="form-label">Nombre</label>
-        <input type="text"
-        class="form-control"
-        id="formGroupExampleInput"
-        placeholder="Nombre"
-        [(ngModel)]="alumno.nombre"
-        name="nombre">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre"
+          [(ngModel)]="alumno.nombre" name="nombre">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput3" class="form-label">Apellido</label>
-        <input type="text"
-        class="form-control"
-        id="formGroupExampleInput2"
-        placeholder="Apellido"
-        [(ngModel)]="alumno.apellido"
-        name="apellido">
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Apellido"
+          [(ngModel)]="alumno.apellido" name="apellido">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput4" class="form-label">Correo</label>
-        <input type="text"
-        class="form-control"
-        id="formGroupExampleInput2"
-        placeholder="Correo"
-        [(ngModel)]="alumno.correo"
-        name="correo">
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Correo"
+          [(ngModel)]="alumno.correo" name="correo">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput5" class="form-label">Sexo</label>
-        <select class="form-select"
-        aria-label="Default select example"
-        [(ngModel)]="alumno.sexo"
-        name="sexo">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="alumno.sexo" name="sexo">
           <option selected></option>
           <option value="Masculino">Masculino</option>
           <option value="Femenino">Femenino</option>
@@ -64,25 +45,20 @@
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput7" class="form-label">Carrera</label>
-        <select class="form-select"
-        aria-label="Default select example"
-        [(ngModel)]="alumno.carrera"
-        name="carrera">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="alumno.carrera" name="carrera" id="carrera">
           <option selected></option>
-          <option value="Progrmacion">Progrmacion</option>
-          <option value="Contabilidad">Contabilidad</option>
+          <option value="Contabilidad TM">Contabilidad TM</option>
+          <option value="Contabilidad TV">Contabilidad TV</option>
+          <option value="Programacion">Programacion</option>
+          <option value="A.R.H TM">A.R.H TM</option>
+          <option value="A.R.H TV">A.R.H TV</option>
+          <option value="Electricidad">Electricidad</option>
+          <option value="Ciencia de datos">Ciencia de datos</option>
         </select>
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput6" class="form-label">Grupo</label>
-        <select class="form-select"
-        aria-label="Default select example"
-        [(ngModel)]="alumno.grupo"
-        name="grupo">
-          <option selected></option>
-          <option value="PMT">PMT</option>
-          <option value="CMT">CMT</option>
-        </select>
+        <input class="form-control" type="text" [(ngModel)]="alumno.grupo" placeholder="Grupo" name="grupo" id="Asgrupo">
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput8" class="form-label">Materia 1</label>
@@ -98,7 +74,8 @@
       </div>
       <div class="mb-3">
         <label for="formGroupExampleInput11" class="form-label">Promedio</label>
-        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Promedio" id="promedio" disabled>
+        <input type="text" class="form-control" name="formGroupExampleInput2" placeholder="Promedio" id="promedio"
+          disabled>
         <input type="button" value="Calcular Promedio" class="btn btn-primary" id="calPromedio" name="calPromedio">
       </div>
       <div class="d-grid gap-2 col-6 mx-auto">
@@ -106,5 +83,4 @@
       </div>
     </div>
   </div>
-  </form>
-
+</form>

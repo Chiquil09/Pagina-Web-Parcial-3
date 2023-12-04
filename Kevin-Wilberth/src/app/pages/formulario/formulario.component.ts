@@ -40,6 +40,37 @@ export class FormularioComponent {
           calcularButton.addEventListener('click', calcularPromedio);
         }
 
+        function asignarGrupo() {
+          const carrera = (document.getElementById('carrera') as HTMLInputElement).value;
+          let grupo = "";
+
+          if (carrera === "Contabilidad TM") {
+              grupo = "A";
+          } else if (carrera === "Contabilidad TV") {
+              grupo = "F";
+          } else if (carrera === "Programacion") {
+              grupo = "B";
+          } else if (carrera === "A.R.H TM") {
+              grupo = "C";
+          } else if (carrera === "A.R.H TV") {
+              grupo = "G";
+          } else if (carrera === "Electricidad") {
+              grupo = "D";
+          } else if (carrera === "Ciencia de datos") {
+              grupo = "E";
+          }
+
+          const g = grupo;
+          (document.getElementById('Asgrupo') as HTMLInputElement).value = g;
+          return g;
+        }
+
+        const carreraElement = document.getElementById('carrera');
+      if (carreraElement) {
+         (document.getElementById('Asgrupo') as HTMLInputElement).value = asignarGrupo();
+          carreraElement.addEventListener('change', asignarGrupo);
+      }
+
 
       const id = this.route.snapshot.paramMap.get('id');
 
