@@ -6,6 +6,7 @@ export class AlumnoModel{
   nombre:string;
   apellido:string;
   correo:string;
+  contra:string;
   grupo:string;
   carrera:string;
   sexo:string;

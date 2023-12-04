@@ -36,6 +36,11 @@
           [(ngModel)]="alumno.correo" name="correo">
       </div>
       <div class="mb-3">
+        <label for="formGroupExampleInput5" class="form-label">Contraseña</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Contraseña"
+          [(ngModel)]="alumno.contra" name="contraseña">
+      </div>
+      <div class="mb-3">
         <label for="formGroupExampleInput5" class="form-label">Sexo</label>
         <select class="form-select" aria-label="Default select example" [(ngModel)]="alumno.sexo" name="sexo">
           <option selected></option>
