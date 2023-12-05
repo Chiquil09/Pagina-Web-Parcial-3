@@ -7,19 +7,18 @@
       <a class="btn btn-primary crear" routerLink="/formulario/nuevo" role="button">Registrar nuevo alumno</a>
       <div class="d-flex gap-2">
         <label>Aprobados
-          <input class="form-check-input" type="checkbox" id="aprobadosCheckbox">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="aprobados">
         </label>
         <label>Reprobados
-          <input class="form-check-input" type="checkbox" id="reprobadosCheckbox">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="reprobados">
         </label>
         <label>Masculino
-          <input class="form-check-input" type="checkbox" id="masculinoCheckbox">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="masculino">
         </label>
         <label>Femenino
-          <input class="form-check-input" type="checkbox" id="femeninoCheckbox">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="femenino">
         </label>
-
-        <button class="btn btn-success">Buscar</button>
+        <button class="btn btn-success" (click)="filtrarDatos()">Buscar</button>
       </div>
   </div>
   <div class="card-body">

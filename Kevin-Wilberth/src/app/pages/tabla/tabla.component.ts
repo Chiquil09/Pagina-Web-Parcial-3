@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class TablaComponent {
 
   alumnos: AlumnoModel[] = [];
+  alumnosOriginal: any[] = [];
 
   constructor ( private alumnoService: AlumnoService) {}
 
@@ -22,6 +23,30 @@ export class TablaComponent {
       this.alumnos = resp;
     });
 
+  }
+
+  // Variables para almacenar el estado de los checkboxes
+  aprobados: boolean = false;
+  reprobados: boolean = false;
+  masculino: boolean = false;
+  femenino: boolean = false;
+
+  // Método para manejar el filtrado
+  filtrarDatos() {
+    // Copia la lista original si aún no se ha hecho
+    if (!this.alumnosOriginal.length) {
+      this.alumnosOriginal = [...this.alumnos];
+    }
+
+    // Aplica lógica de filtrado según el estado de los checkboxes
+    this.alumnos = this.alumnosOriginal.filter((alumno) => {
+      return (
+        (this.aprobados && alumno.aprobado_reprobado === 'Aprobado') ||
+        (this.reprobados && alumno.aprobado_reprobado === 'Reprobado') ||
+        (this.masculino && alumno.sexo === 'Masculino') ||
+        (this.femenino && alumno.sexo === 'Femenino')
+      );
+    });
   }
 
   borrarAlumno( alumno: AlumnoModel, i:number ){
