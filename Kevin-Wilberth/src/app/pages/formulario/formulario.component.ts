@@ -59,35 +59,6 @@ export class FormularioComponent {
           carreraElement.addEventListener('change', asignarGrupo);
       }
 
-
-      function calcularPromedio() {
-        const cal1 = parseFloat((document.getElementById('cal1') as HTMLInputElement).value);
-        const cal2 = parseFloat((document.getElementById('cal2') as HTMLInputElement).value);
-        const cal3 = parseFloat((document.getElementById('cal3') as HTMLInputElement).value);
-
-        // Calcular el promedio
-        const promedio = (cal1 + cal2 + cal3) / 3;
-
-        let estado = "";
-
-        if (promedio >= 6 && promedio <= 10){
-          estado = "Aprobado"
-        } else {
-          estado = "Reoribado"
-        }
-
-
-        (document.getElementById('promedio') as HTMLInputElement).value = promedio.toFixed(2);
-        return estado;
-      }
-
-        const calcularButton = document.getElementById('calPromedio');
-        if (calcularButton) {
-          calcularButton.addEventListener('click', calcularPromedio);
-        }
-
-
-
       const id = this.route.snapshot.paramMap.get('id');
 
       if( id!== 'nuevo' ) {
