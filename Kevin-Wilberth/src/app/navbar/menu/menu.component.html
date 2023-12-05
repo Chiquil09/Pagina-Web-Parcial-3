@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Instituto</a> <button aria-controls="navbarSupportedContent" aria-expanded="false"
+    <a class="navbar-brand" href="#">Instituto</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent"
       data-bs-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,16 +10,12 @@
           <a class="nav-link" routerLink="/inicio">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Nosotros</a>
+          <a *ngIf="credencialesCorrectas" class="nav-link" routerLink="/tabla">Tablero</a>
+          <a *ngIf="!credencialesCorrectas" class="nav-link" routerLink="/tabla-alumnos">Tablero</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tabla">Tablero</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Iniciar Sesion</a>
+          <a *ngIf="credencialesCorrectas" (click)="cerrarSesion()" class="nav-link" routerLink="/">Cerrar Sesión</a>
+          <a class="nav-link" routerLink="/login" *ngIf="!credencialesCorrectas">Iniciar Sesión</a>
         </li>
       </ul>
     </div>

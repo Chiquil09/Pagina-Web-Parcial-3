@@ -1,23 +1,6 @@
 <app-menu></app-menu>
-<br>
-<br>
 <div class="card w-75 mb-3 mx-auto mt-5">
   <div class="card-header">
-    <a class="btn btn-primary crear" routerLink="/formulario/nuevo" role="button">Registrar nuevo alumno</a>
-    <label>Aprobados
-      <input class="checkbox" type="checkbox" id="aprobadosCheckbox">
-    </label>
-    <label>Reprobados
-      <input class="checkbox" type="checkbox" id="reprobadosCheckbox">
-    </label>
-    <label>Masculino
-      <input class="checkbox" type="checkbox" id="masculinoCheckbox">
-    </label>
-    <label>Femenino
-      <input class="checkbox" type="checkbox" id="femeninoCheckbox">
-    </label>
-
-    <button class="btn-success">Buscar</button>
   </div>
   <div class="card-body">
     <table class="table mt-3 table-striped">
@@ -33,7 +16,6 @@
           <th scope="col">Aprobado/Reprobado</th>
           <th scope="col">Grupo</th>
           <th scope="col">Carrera</th>
-          <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -50,13 +32,9 @@
           <td>{{ alumno.aprobado_reprobado}}</td>
           <td>{{ alumno.grupo}}</td>
           <td>{{ alumno.carrera}}</td>
-          <td>
-            <button type="button" class="btn btn-success mr-3"
-              [routerLink]="['/formulario', alumno.id]">Actualizar</button>
-            <button type="button" class="btn btn-danger" (click)="borrarAlumno( alumno, i)">Eliminar</button>
-          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+

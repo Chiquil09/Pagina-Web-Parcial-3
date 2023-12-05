@@ -2,6 +2,12 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 }
+.crear{
+  margin-right: 10vh;
+}
+.checkbox{
+  margin-right: 5vh;
+}
 .bg-light {
 	background-color: transparent !important;
 }
