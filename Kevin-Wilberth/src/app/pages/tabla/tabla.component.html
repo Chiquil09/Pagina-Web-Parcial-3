@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<div class="card w-75 mb-3 mx-auto mt-5">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <a class="btn btn-primary crear" routerLink="/formulario/nuevo" role="button">Registrar nuevo alumno</a>
+      <div class="d-flex gap-2">
+        <label>Aprobados
+          <input class="form-check-input" type="checkbox" id="aprobadosCheckbox">
+        </label>
+        <label>Reprobados
+          <input class="form-check-input" type="checkbox" id="reprobadosCheckbox">
+        </label>
+        <label>Masculino
+          <input class="form-check-input" type="checkbox" id="masculinoCheckbox">
+        </label>
+        <label>Femenino
+          <input class="form-check-input" type="checkbox" id="femeninoCheckbox">
+        </label>
+
+        <button class="btn btn-success">Buscar</button>
+      </div>
+  </div>
+  <div class="card-body">
+    <table class="table mt-3 table-striped">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">#</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Sexo</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Contraseña</th>
+          <th scope="col">Aprobado/Reprobado</th>
+          <th scope="col">Grupo</th>
+          <th scope="col">Carrera</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>
+            <img [src]="alumno.imagen " alt="Imagen " width="60">
+        </td>
+          <td>{{ alumno.nombre}}</td>
+          <td>{{ alumno.apellido}}</td>
+          <td>{{ alumno.sexo}}</td>
+          <td>{{ alumno.correo}}</td>
+          <td>{{ alumno.contra}}</td>
+          <td>{{ alumno.aprobado_reprobado}}</td>
+          <td>{{ alumno.grupo}}</td>
+          <td>{{ alumno.carrera}}</td>
+          <td>
+            <button type="button" class="btn btn-success btn-md mr-3" [routerLink]="['/formulario', alumno.id]">Actualizar</button>
+            <br>
+            <br>
+            <button type="button" class="btn btn-danger btn-md" (click)="borrarAlumno(alumno, i)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
